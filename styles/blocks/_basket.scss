@@ -27,72 +27,6 @@
     }
   }
 
-  &__list {
-    margin: 0 0 40px;
-    padding: 0;
-    list-style: none;
-  }
-
-  &__item {
-    margin-bottom: 32px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__link {
-    display: inline-block;
-    padding-bottom: 8px;
-    border-bottom: 1px solid transparent;
-
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 22px;
-    color: $c-gray;
-    text-decoration: none;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    transition: border-color 0.3s;
-
-    &:hover {
-      border-color: $c-gray;
-    }
-
-    @include onDesktop {
-      font-weight: 700;
-    }
-  }
-
-  &__call {
-    display: block;
-    width: max-content;
-
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 27px;
-    text-transform: uppercase;
-    color: $c-gray;
-    text-decoration: none;
-
-    &--phone {
-      margin-bottom: 16px;
-    }
-
-    &--action {
-      padding-bottom: 8px;
-      border-bottom: 1px solid $c-gray;
-      font-size: 12px;
-      line-height: 16px;
-      letter-spacing: 2px;
-    }
-
-    @include onDesktop {
-      font-weight: 700;
-    }
-  }
-
   &__container {
     display: flex;
     flex-direction: column-reverse;
@@ -117,7 +51,7 @@
 
     @include onDesktop {
       padding-right: 2vw;
-      width: 30vw;
+      width: 100%;
       height: 100%;
     }
   }
@@ -134,7 +68,7 @@
       padding: 0;
       padding-left: 2vw;
       height: 100%;
-      width: 30vw;
+      width: 100%;
       border: none;
     }
   }
@@ -205,6 +139,10 @@
 
       &:hover {
         box-shadow: 0 0 6px $c-gray;
+      }
+
+      &:active {
+        background: greenyellow;
       }
     }
   }

@@ -268,7 +268,7 @@ function render() {
     <nav class="page__basket basket" id="basket">
       <div class="container">
         <div class="basket__content">
-          <form action="#" method="POST" id="user-form">
+          <form id="user-form">
             <div class="basket__top">
               <a
                 href="#"
@@ -352,6 +352,15 @@ function render() {
                           >+</button>
                         </div>
                       </div>
+
+                      <div class="user-food__basket-container">
+                        <img
+                          src="images/basket_delete.svg"
+                          alt="Place ${i + 1}"
+                          class="user-food__basket-delete"
+                          onclick="deletePizza(${i})"
+                        >
+                      </div>
                     </div>
                   `).join('')
                 }
@@ -391,6 +400,15 @@ function render() {
                           >+</button>
                         </div>
                       </div>
+
+                      <div class="user-food__basket-container">
+                        <img
+                          src="images/basket_delete.svg"
+                          alt="Place ${i + 1}"
+                          class="user-food__basket-delete"
+                          onclick="deleteBurger(${i})"
+                        >
+                      </div>
                     </div>
                   `).join('')
                 }
@@ -429,6 +447,15 @@ function render() {
                             onclick="plusQuantityAsianToCart(${i})"
                           >+</button>
                         </div>
+                      </div>
+
+                      <div class="user-food__basket-container">
+                        <img
+                          src="images/basket_delete.svg"
+                          alt="Place ${i + 1}"
+                          class="user-food__basket-delete"
+                          onclick="deleteAsian(${i})"
+                        >
                       </div>
                     </div>
                   `).join('')
@@ -779,6 +806,15 @@ function render() {
               >+</button>
             </div>
           </div>
+
+          <div class="user-food__basket-container">
+            <img
+              src="images/basket_delete.svg"
+              alt="Place ${i + 1}"
+              class="user-food__basket-delete"
+              onclick="deletePizza(${i})"
+            >
+          </div>
         </div>
       `).join('')
     }
@@ -817,6 +853,15 @@ function render() {
                 onclick="plusQuantityBurgerToCart(${i})"
               >+</button>
             </div>
+          </div>
+
+          <div class="user-food__basket-container">
+            <img
+              src="images/basket_delete.svg"
+              alt="Place ${i + 1}"
+              class="user-food__basket-delete"
+              onclick="deleteBurger(${i})"
+            >
           </div>
         </div>
       `).join('')
@@ -857,6 +902,15 @@ function render() {
               >+</button>
             </div>
           </div>
+
+          <div class="user-food__basket-container">
+            <img
+              src="images/basket_delete.svg"
+              alt="Place ${i + 1}"
+              class="user-food__basket-delete"
+              onclick="deleteAsian(${i})"
+            >
+          </div>
         </div>
       `).join('')
     }
@@ -879,6 +933,30 @@ function render() {
       `
     : body.innerHTML = navBasket;
 
+}
+
+function deletePizza(id) {
+  cart.pizza.splice(id, 1);
+
+  value = 2;
+
+  render();
+}
+
+function deleteBurger(id) {
+  cart.burger.splice(id, 1);
+
+  value = 2;
+
+  render();
+}
+
+function deleteAsian(id) {
+  cart.asian.splice(id, 1);
+
+  value = 2;
+
+  render();
 }
 
 function renderBasket() {
