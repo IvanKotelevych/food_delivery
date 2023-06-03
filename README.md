@@ -24,7 +24,23 @@ Towards the end of the website, there is a contact form. Users can utilize this 
 ## Website Hosting
 FOOD de.ry is hosted on GitHub Pages. You can find the source code and configuration files for the website in the repository [here](https://github.com/IvanKotelevych/food_delivery). GitHub Pages is a free hosting service provided by GitHub that allows you to publish static websites directly from a GitHub repository.
 
-To access the hosted website, simply visit [https://your-username.github.io/repository-name](https://IvanKotelevych.github.io/food_delivery). 
+FOOD de.ry is hosted using json-server. The website utilizes a JSON file (`user.json`) as a database to store and retrieve data. To set up the environment, follow these steps:
+
+1. Install the json-server package globally by running the command:
+  npm install -g json-server
+
+2. Start the json-server and watch the `user.json` file by running the command:
+  json-server --watch user.json
+  
+This command will start the json-server and provide a RESTful API to interact with the `user.json` file.
+
+You can now make requests to the json-server API in your web pages to retrieve and manipulate data in the database.
+
+---
+
+You can visit the repository on GitHub Pages: [FOOD de.ry Repository](https://github.com/IvanKotelevych/food_delivery).
+
+To access the hosted website, simply visit [https://your-username.github.io/repository-name](https://IvanKotelevych.github.io/food_delivery/index.html). 
 
 ---
 
