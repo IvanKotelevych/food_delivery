@@ -21,3 +21,15 @@
 @import 'blocks/gallery';
 @import 'blocks/contact-us';
 @import 'blocks/footer';
+
+@keyframes spin {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+  50% {
+    transform: translate3d(0, 50%, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}

@@ -173,19 +173,7 @@ const bodyBasket = document.querySelector('.page__body--basket');
 render();
 
 function render() {
-  let resultPrice = 0;
-
-  for (let i  = 0; i < cart.pizza.length; i++) {
-    resultPrice += cart.pizza[i].quantity * cart.pizza[i].price;
-  }
-
-  for (let i  = 0; i < cart.burger.length; i++) {
-    resultPrice += cart.burger[i].quantity * cart.burger[i].price;
-  }
-
-  for (let i  = 0; i < cart.asian.length; i++) {
-    resultPrice += cart.asian[i].quantity * cart.asian[i].price;
-  }
+  const resultPrice = totalPrice();
 
   const header = `
     <header class="page__section header">
@@ -207,7 +195,7 @@ function render() {
           </div>
 
           <a href="#pizza-menu" class="header__title">
-            ORDER NOW
+            ORDER NOW<br>↓
           </a>
         </div>
       </div>
@@ -268,7 +256,7 @@ function render() {
     <nav class="page__basket basket" id="basket">
       <div class="container">
         <div class="basket__content">
-          <form id="user-form">
+          <form id="form-user">
             <div class="basket__top">
               <a
                 href="#"
@@ -292,25 +280,25 @@ function render() {
                 <div class="user-info__input">
                   <label class="user-info__input-label" for="name">Name:</label>
                   <br>
-                  <input class="user-info__input-form" type="text" name="name" id="name" placeholder="your name">
+                  <input class="user-info__input-form" type="text" name="name" id="name" placeholder="your name" required>
                 </div>
 
                 <div class="user-info__input">
                   <label class="user-info__input-label" for="email">Email:</label>
                   <br>
-                  <input class="user-info__input-form" type="email" name="email" id="email" placeholder="your email">
+                  <input class="user-info__input-form" type="email" name="email" id="email" placeholder="your email" required>
                 </div>
 
                 <div class="user-info__input">
                   <label class="user-info__input-label" for="phone">Phone:</label>
                   <br>
-                  <input class="user-info__input-form" type="tel" name="phone" id="phone" placeholder="your phone">
+                  <input class="user-info__input-form" type="tel" name="phone" id="phone" placeholder="your phone" required>
                 </div>
 
                 <div class="user-info__input">
                   <label class="user-info__input-label" for="address">Address:</label>
                   <br>
-                  <input class="user-info__input-form" type="text" name="address" id="address" placeholder="your adress">
+                  <input class="user-info__input-form" type="text" name="address" id="address" placeholder="your adress" required>
                 </div>
               </div>
 
@@ -969,7 +957,56 @@ function renderHome() {
   render();
 }
 
+function totalPrice() {
+  let resultCost = 0;
+
+  for (let i  = 0; i < cart.pizza.length; i++) {
+    resultCost += cart.pizza[i].quantity * cart.pizza[i].price;
+  }
+
+  for (let i  = 0; i < cart.burger.length; i++) {
+    resultCost += cart.burger[i].quantity * cart.burger[i].price;
+  }
+
+  for (let i  = 0; i < cart.asian.length; i++) {
+    resultCost += cart.asian[i].quantity * cart.asian[i].price;
+  }
+
+  return resultCost;
+}
+
 function submitForm() {
+  const data = {
+    name: !document.getElementById('name').value ? 'default' : document.getElementById('name').value,
+    cost: `$ ${!!totalPrice() ? totalPrice() + Math.floor(150 / totalPrice() + 5) : totalPrice()}`,
+  }
+
+  if (!document.getElementById('name').value
+    || !document.getElementById('email').value
+    || !document.getElementById('phone').value
+    || !document.getElementById('address').value
+  ) {
+    return;
+  } else if (totalPrice() === 0) {
+    alert('Add food');
+
+    return;
+  } else if (!confirm('confirm if you are not a robot')) {
+    return;
+  }
+
+  alert(`Greetings ${data.name}, your order will arrive within one hour\nthe order costs - ${data.cost}`);
+
+  postData('http://localhost:3000/users', data);
+
+  fetch('http://localhost:3000/users')
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
+
   cart = {
     pizza: [],
     burger: [],
@@ -977,6 +1014,23 @@ function submitForm() {
   };
 
   render();
+}
+
+async function postData(url = 'http://localhost:3000/users', data = {name: 'default', cost: 'default'}) {
+  const response = await fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(data)
+  });
+
+  return await response.json();
 }
 
 function plusQuantityPizzaToCart(id) {

@@ -40,6 +40,8 @@
     line-height: 100%;
     letter-spacing: 1.5px;
     text-shadow: 0 0 8px black;
+    transform: translate3d(0, -50%, 0);
+    animation: spin 4s infinite linear;
 
     @include onTablet {
       font-size: 38px;

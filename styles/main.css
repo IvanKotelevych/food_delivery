@@ -876,6 +876,8 @@ p {
   line-height: 100%;
   letter-spacing: 1.5px;
   text-shadow: 0 0 8px black;
+  transform: translate3d(0, -50%, 0);
+  animation: spin 4s infinite linear;
 }
 @media (min-width: 744px) {
   .header__title {
@@ -1583,5 +1585,17 @@ p {
 @media (min-width: 1020px) {
   .footer {
     height: 420px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+  50% {
+    transform: translate3d(0, 50%, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
   }
 }/*# sourceMappingURL=main.css.map */
