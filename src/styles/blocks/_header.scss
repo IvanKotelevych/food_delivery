@@ -1,0 +1,52 @@
+.header {
+  background-size: cover;
+  background-position: left;
+  background-image: url(../images/header.jpg);
+
+  @include onTablet {
+    background-position: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    height: 100vh;
+    
+    padding: 29px 0 20vh;
+
+    @include onTablet {
+      padding: 34px 0 22vh;
+    }
+  
+    @include onDesktop {
+      padding: 36px 0 30vh;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 32px;
+    color: $c-gray;
+    line-height: 100%;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px black;
+
+    @include onTablet {
+      font-size: 38px;
+    }
+
+    @include onDesktop {
+      font-size: 54px;
+    }
+  }
+}

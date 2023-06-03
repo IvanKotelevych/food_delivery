@@ -1,0 +1,158 @@
+.user-food {
+  display: flex;
+  width: 100%;
+  height: 150px;
+
+  @include onTablet {
+    height: 200px;
+  }
+
+  &__photo--container {
+    position: relative;
+
+    box-sizing: border-box;
+    width: 200px;
+    max-height: 200px;
+
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      max-height: 356px;
+    }
+
+    @include onDesktop {
+      max-height: 256px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-left: 20px;
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
+
+  &__title {
+    display: block;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: $c-gray;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 140%;
+    }
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: $c-gray;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 140%;
+    }
+  }
+
+  &__quantity {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+
+    &-button {
+      box-sizing: border-box;
+      width: 28px;
+      height: 28px;
+      font-weight: 700;
+      font-size: 20px;
+      border: 1px solid black;
+      background: $c-gray;
+      cursor: pointer;
+
+      @include onTablet {
+        width: 35px;
+        height: 35px;
+      }
+
+      &--plus {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+
+      &--minus {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+    }
+
+    &-number {
+      box-sizing: border-box;
+      width: 70px;
+      height: 28px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 20px;
+      border: 1px solid black;
+      background: $c-gray;
+
+      @include onTablet {
+        width: 70px;
+        height: 35px;
+      }
+
+      @include onDesktop {
+        width: 70px;
+      }
+    }
+
+    &-price {
+      text-decoration: overline wavy ;
+    }
+  }
+
+  &__add {
+    width: 100%;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+    margin-bottom: 40px;
+
+    border: 1px solid black;
+    border-radius: 8px;
+    background: $c-gray;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 55px;
+    }
+  }
+}

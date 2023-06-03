@@ -1,0 +1,34 @@
+.user-info {
+  &__map {
+    width: 100%;
+    height: 30vh;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+
+    }
+  }
+
+  &__input {
+    font-size: 18px;
+    font-weight: 400;
+
+    &-label {
+      color: $c-gray;
+      padding-left: 10px;
+      letter-spacing: 2px;
+    }
+
+    &-form {
+      color: $c-dark;
+      margin-bottom: 20px;
+      height: 24px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      padding-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+$pad: 20px;
+
+.container {
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0 $pad;
+  z-index: 2;
+
+  @include onTablet {
+    $pad: 72px;
+    padding: 0 $pad;
+  }
+
+  @include onDesktop {
+    $pad: 120px;
+    padding: 0 $pad;
+  }
+
+  &-icon {
+    display: flex;
+    justify-content: space-between;
+    padding: 29px $pad 0 $pad;
+    z-index: 1;
+
+    position: sticky;
+    top: 0;
+
+    @include onTablet {
+      $pad: 72px;
+      padding: 34px $pad 0 $pad;
+    }
+
+    @include onDesktop {
+      $pad: 60px;
+      padding: 36px $pad 0 $pad;
+    }
+  }
+}

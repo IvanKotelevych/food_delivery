@@ -1,0 +1,59 @@
+.icon {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-bottom: 100%;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  cursor: pointer;
+
+  &--menu {
+    background-image: url(../images/menu.svg);
+
+    &:hover {
+      background-image: url(../images/menu_hover.svg);
+    }
+
+    &-order {
+      background-color: $c-dark;
+      height: 18px;
+      width: 18px;
+      padding: 0;
+      margin: 0;
+
+      @include onTablet {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+
+  &--basket {
+    background-image: url(../images/basket.svg);
+
+    &-order {
+      background-color: $c-dark;
+      height: 18px;
+      width: 18px;
+      padding: 0;
+      margin: 0;
+
+      @include onTablet {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+
+  &--arrow-left {
+    background-image: url(../images/arrow.svg);
+  }
+
+  &--arrow-right {
+    background-image: url(../images/arrow.svg);
+    transform: rotate(180deg);
+  }
+}
