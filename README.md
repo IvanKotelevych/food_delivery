@@ -24,7 +24,7 @@ Towards the end of the website, there is a contact form. Users can utilize this 
 ## Website Hosting
 FOOD de.ry is hosted on GitHub Pages. You can find the source code and configuration files for the website in the repository [here](https://github.com/IvanKotelevych/food_delivery). GitHub Pages is a free hosting service provided by GitHub that allows you to publish static websites directly from a GitHub repository.
 
-To access the hosted website, simply visit [https://your-username.github.io/repository-name](https://IvanKotelevych.github.io/food_delivery). 
+To access the hosted website, simply visit [https://your-username.github.io/repository-name](https://IvanKotelevych.github.io/food_delivery/index.html). 
 
 ---
 
