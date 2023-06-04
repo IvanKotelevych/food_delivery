@@ -153,8 +153,9 @@
       box-shadow: 0 0 6px $c-gray;
     }
 
-    &:active {
-      background: greenyellow;
+    &--active {
+      background: rgb(214, 253, 155);
+      box-shadow: 0 0 6px rgb(214, 253, 155);
     }
   }
 }

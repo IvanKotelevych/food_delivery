@@ -9,7 +9,8 @@ const foods = {
       diameter: 30,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 1,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "pizza #2",
@@ -18,7 +19,8 @@ const foods = {
       diameter: 30,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 2,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "pizza #3",
@@ -27,7 +29,8 @@ const foods = {
       diameter: 30,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 3,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "pizza #4",
@@ -36,7 +39,8 @@ const foods = {
       diameter: 30,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 4,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "pizza #5",
@@ -45,7 +49,8 @@ const foods = {
       diameter: 30,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 5,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "pizza #6",
@@ -54,7 +59,8 @@ const foods = {
       diameter: 30,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 6,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
   ],
   burger: [
@@ -64,7 +70,8 @@ const foods = {
       weight: 760,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 1,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "burger #2",
@@ -72,7 +79,8 @@ const foods = {
       weight: 810,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 2,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "burger #3",
@@ -80,7 +88,8 @@ const foods = {
       weight: 580,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 3,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "burger #4",
@@ -88,7 +97,8 @@ const foods = {
       weight: 500,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 4,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "burger #5",
@@ -96,7 +106,8 @@ const foods = {
       weight: 470,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 5,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "burger #6",
@@ -104,7 +115,8 @@ const foods = {
       weight: 650,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 6,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
   ],
   asian: [
@@ -114,7 +126,8 @@ const foods = {
       weight: 270,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 1,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "asian #2",
@@ -122,7 +135,8 @@ const foods = {
       weight: 320,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 2,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "asian #3",
@@ -130,7 +144,8 @@ const foods = {
       weight: 240,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 3,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "asian #4",
@@ -138,7 +153,8 @@ const foods = {
       weight: 666,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 4,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "asian #5",
@@ -146,7 +162,8 @@ const foods = {
       weight: 620,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 5,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
     {
       name: "asian #6",
@@ -154,7 +171,8 @@ const foods = {
       weight: 490,
       composition: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis eos ad nesciunt totam consectetur!",
       image: 6,
-      quantity: 0
+      quantity: 0,
+      active: false
     },
   ],
 };
@@ -532,7 +550,7 @@ function render() {
                     </div>
 
                     <button
-                      class="foods__add"
+                      class="foods__add${pizza.active ? ' foods__add--active' : ''}"
                       onclick="addPizzaToCart(${i})"
                     >
                       add to Cart
@@ -590,7 +608,7 @@ function render() {
                   </div>
 
                   <button
-                    class="foods__add"
+                    class="foods__add${burger.active ? ' foods__add--active' : ''}"
                     onclick="addBurgerToCart(${i})"
                   >
                     add to cart
@@ -647,7 +665,7 @@ function render() {
                   </div>
 
                   <button
-                    class="foods__add"
+                    class="foods__add${asian.active ? ' foods__add--active' : ''}"
                     onclick="addAsianToCart(${i})"
                   >
                     add to cart
@@ -924,6 +942,8 @@ function render() {
 }
 
 function deletePizza(id) {
+  foods.pizza[foods.pizza.indexOf(cart.pizza[id])].active = false;
+
   cart.pizza.splice(id, 1);
 
   value = 2;
@@ -932,6 +952,8 @@ function deletePizza(id) {
 }
 
 function deleteBurger(id) {
+  foods.burger[foods.burger.indexOf(cart.burger[id])].active = false;
+
   cart.burger.splice(id, 1);
 
   value = 2;
@@ -940,6 +962,8 @@ function deleteBurger(id) {
 }
 
 function deleteAsian(id) {
+  foods.asian[foods.asian.indexOf(cart.asian[id])].active = false;
+
   cart.asian.splice(id, 1);
 
   value = 2;
@@ -1122,6 +1146,8 @@ function addPizzaToCart(id) {
     return;
   }
 
+  foods.pizza[id].active = true;
+
   cart.pizza.push(foods.pizza[id]);
 
   render();
@@ -1132,6 +1158,8 @@ function addBurgerToCart(id) {
     return;
   }
 
+  foods.burger[id].active = true;
+
   cart.burger.push(foods.burger[id]);
   render();
 }
@@ -1140,6 +1168,8 @@ function addAsianToCart(id) {
   if (cart.asian.includes(foods.asian[id])) {
     return;
   }
+
+  foods.asian[id].active = true;
 
   cart.asian.push(foods.asian[id]);
   render();

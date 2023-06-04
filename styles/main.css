@@ -1304,8 +1304,9 @@ p {
 .foods__add:hover {
   box-shadow: 0 0 6px #E5E5E5;
 }
-.foods__add:active {
-  background: greenyellow;
+.foods__add--active {
+  background: rgb(214, 253, 155);
+  box-shadow: 0 0 6px rgb(214, 253, 155);
 }
 
 .user-food {
